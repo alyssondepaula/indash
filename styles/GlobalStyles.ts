@@ -7,7 +7,6 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   html, body, #root {
-    flex-direction: row;
     height: 100%;
     width: 100%;
     background: var(--color-background);
