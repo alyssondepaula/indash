@@ -13,12 +13,42 @@ export const LogoContainer = styled.div`
 `;
 
 export const LogoImg = styled.img`
-   width:  2.87rem;
-   height: 2.87rem;
+   width:  46px;
+   height: 46px;
 `;
 
 export const Menu = styled.div`
+   display: flex;
    width: 100%;
-   height: 100%;
-   background-color: black;
+   height: 10%;
+   margin-top: 2.5rem;
+   flex-direction: column;
+   align-items: center;
+
+`;
+
+export const OptionMenu = styled.div<{selected: boolean | undefined}>`
+   display: flex;
+   width: 100%;
+   height: 3rem;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+
+    &::before {
+        content: "";
+        width: .25rem;
+        height:  3rem;
+        border-radius: 0rem .75rem .75rem 0rem;
+        left: 0px;
+        position: absolute;
+        background: var(--color-secondary);
+      }
+
+`;
+
+export const MenuIconOption = styled.img`
+   width:  32px;
+   height: 32px;
 `;

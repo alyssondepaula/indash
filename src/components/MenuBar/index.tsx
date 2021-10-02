@@ -1,4 +1,4 @@
-import { Container, LogoContainer, LogoImg, Menu } from "./styles";
+import { Container, LogoContainer, LogoImg, Menu, MenuIconOption, OptionMenu } from "./styles";
 
 export function MenuBar() {
     return (
@@ -9,8 +9,12 @@ export function MenuBar() {
                   
               </LogoContainer>
               <Menu>
-                      
-                  </Menu>
+                  <OptionMenu selected={true}>
+                  <MenuIconOption src='/images/icon-home.png' alt='logo' loading='lazy'/>
+                  </OptionMenu>
+
+                  
+             </Menu>
           </Container>
     );
 }
