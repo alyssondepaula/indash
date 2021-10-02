@@ -59,6 +59,7 @@ export const IconContainer = styled.div`
    border-radius: .5rem;
    align-items: center;
    justify-content: center;
+   
 
 `;
 
@@ -68,17 +69,23 @@ export const Input = styled.input`
   padding-left: 1rem;
   border: none;
   outline: none;
+
+  ::placeholder { 
+  color: #ACACAC;
+  opacity: 1; 
+}
 `;
 
 export const ChartContainer = styled.div`
    display: flex;
+   flex-direction: column;
    width: 100%;
    height: 23.75rem;
    background-color: var(--color-white);
    border-radius: .5rem;
    align-items: center;
-   justify-content: center;
    margin-top: 1.5rem;
+   padding: 25px 20px;
 `;
 
 export const RecentCompaniesContainer = styled.div`
@@ -90,4 +97,28 @@ export const RecentCompaniesContainer = styled.div`
    align-items: center;
    justify-content: center;
    margin-top: 2.37rem;
+`;
+
+
+export const InfoNumbers = styled.div`
+   display: flex;
+   flex-direction: row;
+
+   width: 100%;
+   height: 2.87rem;
+   background-color: var(--color-white);
+   border-radius: .5rem;
+   align-items: center;
+   justify-content: space-between;
+
+`;
+
+export const DescritionInfo = styled.div`
+   display: flex;
+   flex-direction: column;
+`;
+
+export const TextInfo = styled.h2`
+   color: var(--color-gray003);
+   font-size: 1rem;
 `;
