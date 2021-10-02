@@ -13,7 +13,11 @@ export default createGlobalStyle`
   }
 
   :root {
+    --color-primary: #0047BB;
+    --color-secondary: #F06400;
     --color-background: #F5F8FA;
     --color-white: #FFFFFF;
+
+    --color-gray003: #14171A;
   }
 `;

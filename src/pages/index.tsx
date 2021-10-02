@@ -12,7 +12,7 @@ const Home: NextPage = () => {
 
         <CardEmpresa/>
       </MainContent>
-     <RightBar/>
+     
      </Container>
     </>
   )

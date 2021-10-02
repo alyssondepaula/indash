@@ -6,7 +6,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return <>
   
   <GlobalStyles/>
-  <Component {...pageProps} />
+  <Component {...pageProps}>
+    
+  </Component>
   </>
 }
 export default MyApp

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-   width: 18.68rem;
+   width: 7.68rem;
    height: 4.56rem;
    background-color: var(--color-white);
 
