@@ -34,8 +34,14 @@ export const Star = styled.img`
 `;
 
 export const FavoriteList = styled.ul`
+   display: flex;
+   flex-direction: column;
    width: 100%;
+   height: 4.56rem;
 
+   & + ui {
+      margin-top: 12px;
+   }
 `;
 
 export const FavoriteView = styled.div`

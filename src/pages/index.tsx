@@ -115,7 +115,7 @@ const Home: NextPage = () => {
 
         <HeadingPageContainer>
           <Icon src='/images/icon-dashboard.png' alt='Logo Dashboard' loading='lazy'/>
-          <Text>Dashboard</Text>
+          <Text style={{fontSize: '1.75rem'}}>Dashboard</Text>
         </HeadingPageContainer>
 
         <InputContainer>
@@ -160,7 +160,10 @@ const Home: NextPage = () => {
 
         </ChartContainer>
           <RecentCompaniesContainer>
-
+            <HeadingPageContainer>
+              <Icon src='/images/icon-dashboard.png' alt='Logo Dashboard' loading='lazy'/>
+              <Text style={{fontSize: '1rem'}}>Empresas Recentes</Text>
+            </HeadingPageContainer>
           </RecentCompaniesContainer>
       </MainContent>
      <RightBar/>

@@ -5,11 +5,9 @@ export function MenuBar() {
           <Container>
               <LogoContainer>
                   <LogoImg src='/images/monetus.logo.symbol.png' alt='logo' loading='lazy'/>
-
-                  
               </LogoContainer>
               <Menu>
-                  <OptionMenu selected={true}>
+                  <OptionMenu selected={true} style={OptionMenu.active}>
                   <MenuIconOption src='/images/icon-home.png' alt='logo' loading='lazy'/>
                   </OptionMenu>
 

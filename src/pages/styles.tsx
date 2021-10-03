@@ -28,7 +28,6 @@ export const HeadingPageContainer = styled.div`
 
 export const Text = styled.h2`
    color: var(--color-gray003);
-   font-size: 1.75rem;
 `;
 
 export const Icon = styled.img`
@@ -94,8 +93,6 @@ export const RecentCompaniesContainer = styled.div`
    height: 8.5rem;
    background-color: var(--color-white);
    border-radius: .5rem;
-   align-items: center;
-   justify-content: center;
    margin-top: 2.37rem;
 `;
 

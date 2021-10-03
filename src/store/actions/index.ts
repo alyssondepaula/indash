@@ -1,0 +1,9 @@
+// *** USER ***
+export const ADD_FAVORITE = "ADD_FAVORITE";
+export const DEL_FAVORITE = "DEL_FAVORITE";
+
+// *** SETTINGS ***
+export const USER_SETTINGS_UPDATE_LANGUAGE = "USER_SETTINGS_UPDATE_LANGUAGE";
+
+// *** POSTS ***
+export const POSTS_UPDATE_LIST = "POSTS_UPDATE_LIST";
