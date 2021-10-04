@@ -22,7 +22,6 @@ export const HeadingPageContainer = styled.div`
    height: 1.75rem;
    display: inline-flex;
    align-items: center;
-   justify-content: space-between;
 `;
 
 
@@ -30,7 +29,7 @@ export const Text = styled.h2`
    color: var(--color-gray003);
 `;
 
-export const Icon = styled.img`
+export const Icon = styled.input`
    width: 1.5rem;
    height: 1.5rem;
 `;
@@ -89,9 +88,8 @@ export const ChartContainer = styled.div`
 
 export const RecentCompaniesContainer = styled.div`
    display: flex;
+   flex-direction: column;
    width: 100%;
-   height: 8.5rem;
-   background-color: var(--color-white);
    border-radius: .5rem;
    margin-top: 2.37rem;
 `;
@@ -118,5 +116,16 @@ export const DescritionInfo = styled.div`
 export const TextInfo = styled.h2`
    color: var(--color-gray003);
    font-size: 1rem;
+`;
+
+export const HeadingFooterPageContainer = styled.div`
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+`;
+
+export const MarqueeContainer = styled.div`
+   width: 100%;
+   padding: 12px;
 `;
 

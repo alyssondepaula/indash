@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
    display: flex;
-   flex: 1;
+   width: 20.12rem;
    height: 4.56rem;
    background-color: var(--color-white);
 
@@ -25,6 +25,7 @@ export const QuoteImg = styled.img`
 
 export const QuoteInfo = styled.div`
    display: flex;
+   flex: 1;
    flex-direction: column;
    justify-content: space-between;
    margin-left: .75rem;

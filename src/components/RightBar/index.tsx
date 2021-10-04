@@ -49,14 +49,7 @@ export function RightBar() {
                          return <FavoriteView  key={item.symbol}>
                              
                               <CardEmpresa 
-                              
                               symbol={item.symbol}
-                              companyName={item.companyName}
-                              changePercent={item.changePercent}
-                              latestPrice={item.latestPrice} 
-                              sourceImg={item.sourceImg} 
-                              
-
                               />
                               <Trash 
                               onClick={()=>removeFavorite(item.symbol)}
