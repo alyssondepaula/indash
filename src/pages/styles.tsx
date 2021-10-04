@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const MainContent = styled.div`
    flex: 1;
-   background-color: var(--color-background);
+   background-color: var(--color-gray001);
    flex-direction: column;
    border-top-left-radius: 1.5rem;
    border-bottom-left-radius: 1.5rem;
@@ -119,3 +119,4 @@ export const TextInfo = styled.h2`
    color: var(--color-gray003);
    font-size: 1rem;
 `;
+

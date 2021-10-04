@@ -3,23 +3,35 @@ import { AnyAction } from 'redux'
 import { ADD_FAVORITE, DEL_FAVORITE } from "../actions";
 
 export interface IFavorite {
-    id: number;
-    title: string;
+  symbol: string;
+  companyName: string;
+  changePercent: number;
+  latestPrice: number; 
+  sourceImg: string;  
 }
 
 const initialState = {
   data: [
       {
-        id: 1,
-        title: 'a'  
+        symbol: "TWTR",
+        companyName: 'Twitter',
+        changePercent: 0.00,
+        latestPrice: 0, 
+        sourceImg: '/images/companies/twitter.svg'  
       },
       {
-        id: 2,
-        title: 'b'   
+        symbol: "AMZN",
+        companyName: 'Amazon',
+        changePercent: 0.00,
+        latestPrice: 0, 
+        sourceImg: '/images/companies/amazon.svg'    
       },
       {
-        id: 3,
-        title: 'c'   
+        symbol: "SBUX",
+        companyName: 'StarBucks',
+        changePercent: 0.00,
+        latestPrice: 0, 
+        sourceImg: '/images/companies/starbuucks.svg'   
       }
       
   ],
@@ -34,7 +46,7 @@ export const favoritesReducer = (state = initialState, action: AnyAction) => {
     case DEL_FAVORITE:  
     
     
-    const index = state.data.findIndex( item => item.id == action.payload)
+    const index = state.data.findIndex( item => item.symbol == action.payload)
 
     const s: IFavorite[] =  state.data;
     s.splice(index, 1);

@@ -14,15 +14,15 @@ export function RightBar() {
     const dispatch = useDispatch();
 
 
-    const removeFavorite = (id: number) => {
+    const removeFavorite = (symbol: string) => {
         
          dispatch({
               type: 'DEL_FAVORITE',
-              payload: id
+              payload: symbol
          })
          Swal.fire({
           position: 'top-end',
-          html: `Ação ${id} removida dos seus Favoritos!`,
+          html: `Ação ${symbol} removida dos seus Favoritos!`,
           timer: 1200,
           timerProgressBar: true,
           didOpen: () => {
@@ -45,16 +45,24 @@ export function RightBar() {
                  {
                       favorites.map((item: IFavorite) => {
 
-                         return <li key={item.id}> 
-                         <FavoriteView>
+
+                         return <FavoriteView  key={item.symbol}>
                              
-                              <CardEmpresa/>
-                              <Trash src='/images/trash.svg'/>
-                              <button onClick={()=>removeFavorite(item.id)}>
-                               <h3>{item.id}</h3>
-                              </button>
+                              <CardEmpresa 
+                              
+                              symbol={item.symbol}
+                              companyName={item.companyName}
+                              changePercent={item.changePercent}
+                              latestPrice={item.latestPrice} 
+                              sourceImg={item.sourceImg} 
+                              
+
+                              />
+                              <Trash 
+                              onClick={()=>removeFavorite(item.symbol)}
+                              type="image" src='/images/trash.svg'
+                              />
                         </FavoriteView> 
-                        </li>
                       })
                  }
                

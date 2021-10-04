@@ -17,7 +17,6 @@ export const FavoritesHeading = styled.div`
    height: 1.68;
    flex-direction: row;
    align-items: center;
-   padding: 2rem 1.25rem;
    margin-top: 2rem;
    margin-bottom: 2rem;
 `;
@@ -34,32 +33,33 @@ export const Star = styled.img`
 `;
 
 export const FavoriteList = styled.ul`
-   display: flex;
-   flex-direction: column;
    width: 100%;
-   height: 4.56rem;
+   height: 100%;
+   overflow:hidden; 
+   overflow-y:scroll;
 
-   & + ui {
-      margin-top: 12px;
-   }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 `;
 
-export const FavoriteView = styled.div`
+export const FavoriteView = styled.li`
    display: flex;
    width: 100%;
-   height: 4.56rem;
-  
-
    flex-direction: row;
    justify-content: space-between;
    align-items: center;
-
-   
-`;
-
-export const Trash = styled.img`
-   width: 1.68rem;
-   height: 1.68rem;
+   margin-bottom: 2rem;
 
    cursor: pointer;
 `;
+
+export const Trash = styled.input`
+   width: 1.68rem;
+   height: 1.68rem;
+   margin-left: 0.68rem;
+   cursor: pointer;
+`;
+
