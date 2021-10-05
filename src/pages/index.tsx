@@ -29,6 +29,7 @@ import { getQuoteGraph } from '../services/getQuoteGraph';
 import { QuoteDetails } from '../components/QuoteDetails';
 import { FormEvent, useState } from 'react';
 import { getQuoteSupport } from '../services/getQuotesSupport-FAKE';
+import { CustomTooltip } from '../components/Tooltip';
 
 const Home: NextPage = () => {
 
@@ -136,7 +137,7 @@ const Home: NextPage = () => {
       <MainContent>
 
         <HeadingPageContainer>
-          <Icon type='image' src='/images/icon-dashboard.png' alt='Logo Dashboard'/>
+          <Icon type='image' src='/images/icon-dashboard.png' alt='Logo Dashboard' style={{marginRight: '.5rem'}}/>
           <Text style={{fontSize: '1.75rem'}}>Dashboard</Text>
         </HeadingPageContainer>
 
@@ -192,8 +193,8 @@ const Home: NextPage = () => {
             <XAxis dataKey="minute" />
             <YAxis type="number" domain={['dataMin - 5', 'dataMax + 1']}interval='preserveStartEnd' dataKey="close" />
             <CartesianGrid strokeDasharray="3 3" />
-            <Tooltip />
-            <Area type="monotone" dataKey="close" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" activeDot={{ r: 4 }} />
+            <Tooltip content={<CustomTooltip  />}/>
+            <Area type="monotone" dataKey="close" stroke="#0047BB" fillOpacity={1} fill="url(#colorUv)" activeDot={{ r: 10 }} />
           </AreaChart>
 
         </ChartContainer>

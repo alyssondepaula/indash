@@ -18,8 +18,7 @@ export const MainContent = styled.div`
 `;
 
 export const HeadingPageContainer = styled.div`
-   height: 1.75rem;
-   display: inline-flex;
+   display: flex;
    align-items: center;
 `;
 
