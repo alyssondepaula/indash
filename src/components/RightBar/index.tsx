@@ -6,10 +6,12 @@ import { CompanieCards } from "../CompaniesCards";
 import { ProfileBar } from "../ProfileBar";
 import Swal from 'sweetalert2'
 import { Container, FavoriteList, FavoritesHeading, FavoriteView, Star, Text, Trash } from "./styles";
+import { IUSer } from "../../store/reducers/user";
 
 export function RightBar() {
   
     const favorites: IFavorite[] = useSelector((state: RootState) => state.favorite.data);
+    const user: IUSer = useSelector((state: RootState) => state.user.data);
 
     const dispatch = useDispatch();
 
@@ -42,7 +44,7 @@ export function RightBar() {
 
     return (
           <Container>
-               <ProfileBar/>
+               <ProfileBar name={user.name}/>
 
                <FavoritesHeading>
                    <Star src='/images/star.svg'/>

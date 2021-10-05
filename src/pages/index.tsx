@@ -30,6 +30,7 @@ import { QuoteDetails } from '../components/QuoteDetails';
 import { FormEvent, useState } from 'react';
 import { getQuoteSupport } from '../services/getQuotesSupport-FAKE';
 import { CustomTooltip } from '../components/Tooltip';
+import { IQuoteSelected } from '../store/reducers/quoteSelected';
 
 const Home: NextPage = () => {
 
@@ -41,9 +42,19 @@ const Home: NextPage = () => {
 
 
 
-  const dd = String(date.getDate()).padStart(2, '0');
-  const mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
-  const yyyy = date.getFullYear();
+  let dd = String(date.getDate()).padStart(2, '0');
+  let mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+  let yyyy = date.getFullYear();
+
+
+  const sunday = date.getDay() == 0 && true;
+  const saturday = date.getDay() == 6 && true;
+
+
+  if(sunday) { dd = String(date.setDate(date.getDate()-2))};
+  if(saturday) { dd = String(date.setDate(date.getDate()-1))};
+
+
 
   const nowFormat = `${yyyy}${mm}${dd}`;
 
@@ -51,7 +62,7 @@ const Home: NextPage = () => {
 
   const recents: IRecentCompanies[] = useSelector((state: RootState) => state.recentCompanies.data);
   const favorites: IFavorite[] = useSelector((state: RootState) => state.favorite.data);
-  const selected = useSelector((state: RootState) => state.quoteSelected.data);
+  const selected: IQuoteSelected = useSelector((state: RootState) => state.quoteSelected.data);
 
   const quote = getQuote(selected.symbol, true, 'symbol,companyName,change,changePercent,latestPrice');
   const quoteIsUp = quote?.changePercent >= 0 ? true : false
@@ -59,7 +70,6 @@ const Home: NextPage = () => {
   const graphData = getQuoteGraph(selected.symbol,30,nowFormat, 'minute,close' )
   const changeFormat = quote?.changePercent.toFixed(2).toLocaleString('pt-BR', { style: 'decimal' });
 
-  console.log(changeFormat)
   const dispatch = useDispatch();
 
   const AddFavorite = (item: IFavorite) => {
@@ -95,7 +105,9 @@ const Home: NextPage = () => {
     isFavorite(item) ? RemoveFavorite(item) : AddFavorite(item)
   }
 
-  const isFavorite = (item: IFavorite) => favorites.includes(item)
+  const isFavorite = (item: IFavorite | IQuoteSelected) => {
+    return favorites.includes(item)
+  }
 
   const UpdateSelected = (symbol: string) => {
 
@@ -171,19 +183,20 @@ const Home: NextPage = () => {
 
           <DescritionInfo>
           <div style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center'}}>
-          <QuotechangePercentImg style= {{ color: quoteIsUp ? 'var(--color-primary)' : 'var(--color-secondary)' }}
+          <QuotechangePercentImg
        src={quoteIsUp ? '/images/graph-up.svg' : '/images/graph-down.svg'} />
           <TextInfo>${quote?.latestPrice}</TextInfo>
           </div>
           <div style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center'}}>
-          <TextInfo style= {{ color: quoteIsUp ? 'var(--color-primary)' : 'var(--color-secondary)' }}>${quote?.change}</TextInfo>
-          <TextInfo style= {{ color: quoteIsUp ? 'var(--color-primary)' : 'var(--color-secondary)' }}>({changeFormat}%)</TextInfo>
+          <TextInfo style= {{ color: quoteIsUp ? 'var(--color-sucess)' : 'var(--color-secondary)' }}>${quote?.change}</TextInfo>
+          <TextInfo style= {{ color: quoteIsUp ? 'var(--color-sucess)' : 'var(--color-secondary)' }}>({changeFormat}%)</TextInfo>
           </div>
           </DescritionInfo>
           </InfoNumbers>
 
         <AreaChart width={950} height={300} data={graphData}
             margin={{ top: 30, right: 20, left: 0, bottom: 0 }}>
+            
             <defs>
               <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor="#0047BB" stopOpacity={0.46}/>
