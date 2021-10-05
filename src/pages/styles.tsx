@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
+
 export const Container = styled.div`
    display: flex;
-   width: 100vw;
-   height: 100vh;
    background-color: var(--color-white);
    flex-direction: row;
    justify-content: space-between;
@@ -25,16 +24,18 @@ export const HeadingPageContainer = styled.div`
 `;
 
 
-export const Text = styled.h2`
+export const Text = styled.text`
    color: var(--color-gray003);
+   font-weight: 700;
 `;
 
 export const Icon = styled.input`
    width: 1.5rem;
    height: 1.5rem;
+
 `;
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.form`
    display: flex;
    width: 22.75rem;
    height: 2.5rem;
@@ -110,12 +111,14 @@ export const InfoNumbers = styled.div`
 
 export const DescritionInfo = styled.div`
    display: flex;
+   align-items: flex-end;
    flex-direction: column;
 `;
 
-export const TextInfo = styled.h2`
+export const TextInfo = styled.text`
    color: var(--color-gray003);
    font-size: 1rem;
+   font-weight: 700;
 `;
 
 export const HeadingFooterPageContainer = styled.div`
@@ -129,3 +132,9 @@ export const MarqueeContainer = styled.div`
    padding: 12px;
 `;
 
+export const QuotechangePercentImg = styled.img`
+   border-color: 1.40rem;
+   width: 1rem;
+   height: 1rem;
+   margin-right: .3rem;
+`;

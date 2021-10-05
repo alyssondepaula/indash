@@ -21,10 +21,11 @@ export const FavoritesHeading = styled.div`
    margin-bottom: 2rem;
 `;
 
-export const Text = styled.h2`
+export const Text = styled.text`
    color: var(--color-gray003);
    font-size: 1.12rem;
    margin-left: .5rem;
+   font-weight: 700;
 `;
 
 export const Star = styled.img`

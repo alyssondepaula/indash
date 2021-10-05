@@ -1,4 +1,3 @@
-import { CardEmpresa } from "../CardEmpresa";
 import { Avatar, AvatarContainer, Chevron, Container, Text } from "./styles";
 
 export function ProfileBar() {

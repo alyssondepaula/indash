@@ -17,6 +17,9 @@ export const Container = styled.div`
    align-items: center;
    justify-content: center;
 
+   border: none;
+   cursor: pointer;
+
 `;
 
 export const QuoteImg = styled.img`
@@ -31,23 +34,15 @@ export const QuoteInfo = styled.div`
    margin-left: .75rem;
 `;
 
-export const QuoteSymbol = styled.h4`
-   font-size: 1rem;
-   color: var(--color-gray003);
-`;
-
-export const QuoteName = styled.h5`
-   font-size: .75rem;
-   color: var(--color-gray002);
-`;
-
-export const QuotechangePercent = styled.h6`
+export const QuotechangePercent = styled.text<{isUp: boolean}>`
    display: flex;
    flex-direction: row;
    align-items: center;
    justify-content: center;
    font-size: .75rem;
-   margin-left: 5.5rem;
+   color: ${props=> props.isUp ? 'var(--color-sucess)' : 'var(--color-secondary)'};
+   font-weight: 700;
+   
 `;
 
 export const QuotechangePercentImg = styled.img`

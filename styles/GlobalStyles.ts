@@ -6,7 +6,15 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  html, body, #root {
+  html, #root {
+    height: 100%;
+    width: 100%;
+    background: var(--color-gray001);
+  }
+
+  body {
+    display: flex;
+    flex-direction: row-reverse;
     height: 100%;
     width: 100%;
     background: var(--color-gray001);
@@ -22,5 +30,15 @@ export default createGlobalStyle`
     --color-gray001: #F5F8FA;
     --color-gray002: #657786;
     --color-gray003: #14171A;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  text {
+   font-family: 'Lato', sans-serif;
   }
 `;

@@ -22,9 +22,11 @@ export const Container = styled.button`
 
 `;
 
-export const Text = styled.h6`
+export const Text = styled.text`
    color: var(--color-primary);
    font-size: 1rem;
+   font-family: 'Lato', sans-serif;
+   font-weight: 700;
 `;
 
 export const AvatarContainer = styled.div`

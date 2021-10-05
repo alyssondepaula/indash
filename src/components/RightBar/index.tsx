@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addFavorite } from "../../store/actions/favorites";
 import { RootState } from "../../store/reducers";
 import { IFavorite } from "../../store/reducers/favorites";
-import { CardEmpresa } from "../CardEmpresa";
+import { CompanieCards } from "../CompaniesCards";
 import { ProfileBar } from "../ProfileBar";
 import Swal from 'sweetalert2'
 import { Container, FavoriteList, FavoritesHeading, FavoriteView, Star, Text, Trash } from "./styles";
@@ -31,6 +31,14 @@ export function RightBar() {
         })
     }
 
+    const UpdateSelected = (item: IFavorite) => {
+
+     dispatch({
+          type: 'UPDATE_QUOTE',
+          payload: item.symbol
+     })
+}
+
 
     return (
           <Container>
@@ -46,14 +54,18 @@ export function RightBar() {
                       favorites.map((item: IFavorite) => {
 
 
-                         return <FavoriteView  key={item.symbol}>
+                         return <FavoriteView  
+                                 key={item.symbol}
+                              >
                              
-                              <CardEmpresa 
+                              <CompanieCards 
                               symbol={item.symbol}
+                              onClick={()=>UpdateSelected(item)}
                               />
                               <Trash 
                               onClick={()=>removeFavorite(item.symbol)}
                               type="image" src='/images/trash.svg'
+                             
                               />
                         </FavoriteView> 
                       })

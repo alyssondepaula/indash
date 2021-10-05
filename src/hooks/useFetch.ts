@@ -11,7 +11,9 @@ export function useFetch<Data = any, Error = any, >(url: string, params?: {}) {
 
     return response.data;
 
-  }, { refreshInterval: 1000, revalidateOnFocus: true, shouldRetryOnError: true, revalidateOnReconnect: true,  } )
+  }, //{ refreshInterval: 1000, revalidateOnFocus: true, shouldRetryOnError: true, revalidateOnReconnect: true,  } 
+  
+  )
 
   return { data, error }
 }

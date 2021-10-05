@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
    width: 6rem;
@@ -17,7 +17,7 @@ export const LogoImg = styled.img`
    height: 46px;
 `;
 
-export const Menu = styled.div`
+export const Menu = styled.ul`
    display: flex;
    width: 100%;
    height: 10%;
@@ -27,7 +27,7 @@ export const Menu = styled.div`
 
 `;
 
-export const OptionMenu = styled.div<{selected: boolean | undefined}>`
+export const OptionMenu = styled.div`
    display: flex;
    width: 100%;
    height: 3rem;
@@ -36,16 +36,15 @@ export const OptionMenu = styled.div<{selected: boolean | undefined}>`
    justify-content: center;
    cursor: pointer;
 
-    &::before {
-        content: "";
-        width: .25rem;
-        height:  3rem;
-        border-radius: 0rem .75rem .75rem 0rem;
-        left: 0px;
-        position: absolute;
-        background: var(--color-secondary);
-      }
-
+   ::before {
+          content: "";
+          width: .25rem;
+          height:  3rem;
+          border-radius: 0rem .75rem .75rem 0rem;
+          left: 0px;
+          position: absolute;
+          background: var(--color-secondary);
+        }
 `;
 
 export const MenuIconOption = styled.img`
